@@ -18,11 +18,11 @@ st.markdown(
     unsafe_allow_html=True,
 )
 text = st.text_area("Entrez votre texte ici:")
-max_chars = st.number_input("Nombre maximum de caractères par partie:", value=15500, min_value=1, step=1)
+max_chars = st.number_input("Nombre maximum de caractères par partie:", value=14500, min_value=1, step=1)
 if st.button("Séparer"):
     parts = split_text_in_parts(text, max_chars)
     counter =0
     for part in parts:
         counter+=1
-        st.write(f"\n\n- {counter}")
+        st.write(f"\n\n- Partie {counter}")
         st.write(part)
